@@ -1,0 +1,35 @@
+.navbar{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}   
+.navbar .logo{
+    width: 170px;
+}
+.navbar-menu{
+    color: #4A4A4A;
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-weight: 500;
+    font-size: 18px;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;}
+.navber button{
+    padding: 10px 30px;
+    background: transparent;
+    border: 5px solid tomato;
+    color:#49557e;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.navbar button:hover{
+    background: #fff4f2;
+}
