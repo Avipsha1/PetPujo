@@ -10,6 +10,7 @@ import rating_stars from './rating_stars.png'
 import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
+import header from './head.jpg'
 
 
 export const assets = {
@@ -24,6 +25,7 @@ export const assets = {
     selector_icon,
     profile_icon,
     logout_icon,
-    bag_icon
+    bag_icon,
+    header
 }
 
