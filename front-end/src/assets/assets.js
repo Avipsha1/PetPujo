@@ -10,8 +10,13 @@ import rating_stars from './rating_stars.png'
 import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
-import header from './head.jpg'
-
+import header from './header (2).jpg'
+import menu_1 from './DOSA.jpg'
+import menu_2 from './Fried_rice.jpg'
+import menu_3 from './Indian_combo.jpg'
+import menu_4 from './pakoras.jpg'
+import menu_5 from './Noodles.jpg'
+import menu_6 from './ice.jpg'
 
 export const assets = {
     logo,
@@ -26,6 +31,40 @@ export const assets = {
     profile_icon,
     logout_icon,
     bag_icon,
-    header
+    header,
+    menu_1,
+    menu_2,
+    menu_3,
+    menu_4,
+    menu_5,
+    menu_6
 }
+
+export const menu_list = [
+
+    {
+        menu_name: "Dosa",
+        menu_image: menu_1
+    },
+      {
+        menu_name: "Fried rice Combo",
+        menu_image: menu_2
+    },
+      {
+        menu_name: "Indian Combo",
+        menu_image: menu_3
+    },
+      {
+        menu_name: "Pakoras",
+        menu_image: menu_4
+    },
+      {
+        menu_name: "Noodles",
+        menu_image: menu_5
+    },
+      {
+        menu_name: "Ice-cream",
+        menu_image: menu_6
+    },
+]
 

@@ -1,19 +1,21 @@
 .header{
     height: 34vw;
     margin: 30px auto;
-    background: url('/head.jpg') no-repeat ;
+    background: url('./header (2).jpg') no-repeat center center ;
     background-size: contain;
     position: relative;
 }
 .header-contents{
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  
     animation: fadeIn 3s;
 }
 .header-contents h2{
