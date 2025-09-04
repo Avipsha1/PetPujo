@@ -17,6 +17,9 @@ import menu_3 from './Indian_combo.jpg'
 import menu_4 from './pakoras.jpg'
 import menu_5 from './Noodles.jpg'
 import menu_6 from './ice.jpg'
+import chicken_chowmein from './chicken_chowmein'
+import veg_chow from './veg_chow'
+import chowmein from './chowmein'
 
 export const assets = {
     logo,
@@ -37,7 +40,10 @@ export const assets = {
     menu_3,
     menu_4,
     menu_5,
-    menu_6
+    menu_6,
+    chicken_chowmein,
+    veg_chow,
+    chowmein
 }
 
 export const menu_list = [
@@ -46,25 +52,24 @@ export const menu_list = [
         menu_name: "Dosa",
         menu_image: menu_1
     },
-      {
+    {
         menu_name: "Fried rice Combo",
         menu_image: menu_2
     },
-      {
+    {
         menu_name: "Indian Combo",
         menu_image: menu_3
     },
-      {
+    {
         menu_name: "Pakoras",
         menu_image: menu_4
     },
-      {
+    {
         menu_name: "Noodles",
         menu_image: menu_5
     },
-      {
+    {
         menu_name: "Ice-cream",
         menu_image: menu_6
     },
 ]
-
