@@ -17,9 +17,25 @@ import menu_3 from './Indian_combo.jpg'
 import menu_4 from './pakoras.jpg'
 import menu_5 from './Noodles.jpg'
 import menu_6 from './ice.jpg'
+<<<<<<< Updated upstream
 import chicken_chowmein from './chicken_chowmein'
 import veg_chow from './veg_chow'
 import chowmein from './chowmein'
+=======
+import black_coffee from './black_coffee.png'
+import black_tea from './black_tea.png'
+import cold_drink from './cold_drink.png'
+import green_tea from './green_tea.png'
+import green_tea1 from './green_tea1.png'
+import lassi from './lassi.png'
+import lassi1 from  './lassi1.png'
+import lassi2 from './lassi2.png'
+import milk_coffee from './milk_coffee.png'
+import milk_tea from './milk_tea.png'
+import milk_tea2 from './milk_tea2.png'
+import milkshake from './milkshake.png'
+import milkshake1 from './milkshake1.png'
+>>>>>>> Stashed changes
 
 export const assets = {
     logo,
@@ -41,9 +57,25 @@ export const assets = {
     menu_4,
     menu_5,
     menu_6,
+<<<<<<< Updated upstream
     chicken_chowmein,
     veg_chow,
     chowmein
+=======
+    black_coffee,
+    black_tea,
+    cold_drink,
+    green_tea,
+    green_tea1,
+    lassi,
+    lassi1,
+    lassi2,
+    milk_coffee,
+    milk_tea,
+    milk_tea2,
+    milkshake,
+    milkshake1
+>>>>>>> Stashed changes
 }
 
 export const menu_list = [
