@@ -3,8 +3,8 @@ import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom'
 
-const Navbar = ({ setShowLogin }) => { 
-    console.log("setShowLogin inside Navbar:", setShowLogin); // Capital L
+const Navbar = ({ setShowLogin }) => {
+  console.log("setShowLogin inside Navbar:", setShowLogin); // Capital L
   const [Menu, setMenu] = useState("Home");
 
   return (
@@ -15,7 +15,7 @@ const Navbar = ({ setShowLogin }) => {
         <Link to='/' onClick={() => setMenu("Home")} className={Menu === "Home" ? "active" : ""}>Home</Link>
         <a href='#explore-menu' onClick={() => setMenu("Menu")} className={Menu === "Menu" ? "active" : ""}>Menu</a>
         <li
-          onClick={() => setMenu("Cart")} 
+          onClick={() => setMenu("Cart")}
           className={`navbar-cart ${Menu === "Cart" ? "active" : ""}`}
         >
           Cart
@@ -26,7 +26,7 @@ const Navbar = ({ setShowLogin }) => {
 
       <div className="navbar-right">
         <img src={assets.search_icon} alt="search food" />
-        <button onClick={()=>setShowLogin(true)}>Sign in</button> {/* Now works */}
+        <button onClick={() => setShowLogin(true)}>Sign in</button> {/* Now works */}
       </div>
     </div>
   )
