@@ -1,0 +1,47 @@
+/* Toast Notification Styles */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px; 
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: #333;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.4s ease, fadeOut 0.4s ease 2.5s forwards;
+  z-index: 9999;
+  max-width: 300px;
+}
+
+/* Success toast */
+.toast.success {
+  background: #ffffff;
+  color: rgb(74, 72, 72);
+}
+
+/* Error toast */
+.toast.error {
+  background: #ffffff; 
+  color: rgb(74, 72, 72);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px); /* slide from left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

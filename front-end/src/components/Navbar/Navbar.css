@@ -56,6 +56,40 @@
   background: red;
   border-radius: 50%;
 }
+
+.navbar-username {
+  margin-right: 10px;        
+  font-weight: 500;          
+  font-size: 18px;          
+  color: red;               
+}
+
+.navbar-user {
+  display: flex;             
+  align-items: center;
+  gap: 2px;                  
+}
+
+.navbar-user button {
+  display: flex; 
+  position: relative;           
+  align-items: center;                   
+  padding: 6px 12px;                   
+  border: none;                       
+  cursor: pointer;
+  transform: rotate(90deg);
+}
+
+.navbar-user button:hover {
+  background-color: #dcd9d9; 
+}
+
+.navbar-user button img,
+.navbar-user button svg {
+  width: 30px;              
+  height: 30px;
+}
+
 @media (max-width: 1050px) {
     .navbar .logo{
         width: 140px;
