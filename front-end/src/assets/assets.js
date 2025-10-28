@@ -115,3 +115,13 @@ export const menu_list = [
         menu_image: menu_6
     },
 ]
+
+export const food_list = [
+    {
+        _id: "1",
+        name: "Chicken Chowmein",
+        image: chicken_chowmein,
+        price:40,
+        category: "Chowmein"
+    }
+]
