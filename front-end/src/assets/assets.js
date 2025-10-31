@@ -6,7 +6,7 @@ import add_icon_green from './add_icon_green.png'
 import remove_icon_red from './remove_icon_red.png'
 import cross_icon from './cross_icon.png'
 import selector_icon from './selector_icon.png'
-import rating_stars from './rating_stars.png'
+{/*import rating_stars from './rating_stars.png'*/}
 import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
@@ -33,12 +33,12 @@ import milk_tea from './milk_tea.png'
 import milk_tea2 from './milk_tea2.png'
 import milkshake from './milkshake.png'
 import milkshake1 from './milkshake1.png'
-import pulao from './pulao.png'
-import jeera_rice from './jeera_rice.png'
+import pulao from './pulaoo.jpg'
+import jeera_rice from './jeera-rice.jpg'
 import fried_rice from './fried_rice.png';
 import chana_massala from './chana_massala.png'
 import chicken_drumstick from './chicken_drumstick.png'
-import chicken_kosa from './chicken_kosa.png'
+import chicken_kosa from './chicken-kosha.jpg'
 import chilli_chicken from './chilli_chicken.png'
 import chilli_paneer from './chilli_paneer.png'
 import DOSA from './DOSA.jpg'
@@ -49,7 +49,7 @@ export const assets = {
     logo,
     basket_icon,
     search_icon,
-    rating_stars,
+    /*rating_stars,*/
     add_icon_green,
     add_icon_white,
     remove_icon_red,
@@ -144,7 +144,7 @@ export const food_list = [
     {
         _id: "4",
         name: "Pulao",
-        image: pulao,
+        image: pulao ,
         price:90,
         category: "rice"
     },
