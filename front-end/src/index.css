@@ -1,28 +1,78 @@
+/* === Import Google Font === */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-*{
-  padding: 0;
+
+/* === Global Reset === */
+* {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Outfit';
+  font-family: 'Outfit', sans-serif;
   scroll-behavior: smooth;
 }
-body{
-  min-width: 100vh;
+
+/* === Body === */
+body {
+  min-height: 100vh; /* ✅ corrected (was min-width) */
+  background-color: #fff;
+  color: #222;
+  overflow-x: hidden; /* ✅ prevent horizontal scroll */
 }
-a{
+
+/* === Anchor Tags === */
+a {
   text-decoration: none;
   color: inherit;
 }
-.app{
-  width: 80%;
-  margin: auto;
 
+/* === Main App Wrapper === */
+.app {
+  width: 90%;           /* ✅ slightly wider for small screens */
+  max-width: 1200px;    /* ✅ limit max width for large screens */
+  margin: auto;
+  transition: width 0.3s ease;
 }
-@keyframes fadeIn{
-  0%{
-    opacity: 0;
+
+/* === Fade Animation === */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* === Responsive Typography Scaling === */
+html {
+  font-size: 100%; /* 16px default */
+}
+
+/* === Responsive Breakpoints === */
+@media (max-width: 1200px) {
+  .app {
+    width: 92%;
   }
-  100%{
-    opacity: 1;
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 95%;
+  }
+  .app {
+    width: 94%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+  .app {
+    width: 96%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 85%;
+  }
+  .app {
+    width: 98%;
   }
 }

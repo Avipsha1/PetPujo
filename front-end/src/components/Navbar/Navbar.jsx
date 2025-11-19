@@ -1,60 +1,99 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext"; // ✅ Import context for cart items
 
 const Navbar = ({ setShowLogin, user, setUser }) => {
-  const [Menu, setMenu] = useState("Home");
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // ✅ Access cart items from context
+  const { cartItems } = useContext(StoreContext);
+
+  // ✅ Calculate total quantity in cart
+  const totalCartItems = Object.values(cartItems).reduce(
+    (total, qty) => total + qty,
+    0
+  );
 
   // Logout handler
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    setUser(null); // Update parent state
+    setUser(null);
+  };
+
+  // Close menu after clicking any menu link (for mobile)
+  const handleMenuClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
     <div className="navbar">
-      <img src={assets.logo} alt="Logo" className="logo" />
+      {/* ===== Left Section: Logo ===== */}
+      <Link to="/" onClick={handleMenuClick}>
+        <img src={assets.logo2} alt="Logo" className="logo" />
+      </Link>
 
-      <ul className="navbar-menu">
+      {/* ===== Center Section: Navigation Menu ===== */}
+      <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         <Link
           to="/"
-          onClick={() => setMenu("Home")}
-          className={Menu === "Home" ? "active" : ""}
+          className={currentPath === "/" ? "active" : ""}
+          onClick={handleMenuClick}
         >
           Home
         </Link>
-        <a
-          href="#explore-menu"
-          onClick={() => setMenu("Menu")}
-          className={Menu === "Menu" ? "active" : ""}
+
+        <Link
+          to="/menu"
+          className={currentPath === "/menu" ? "active" : ""}
+          onClick={handleMenuClick}
         >
           Menu
-        </a>
-        <li
-          onClick={() => setMenu("Cart")}
-          className={`navbar-cart ${Menu === "Cart" ? "active" : ""}`}
+        </Link>
+
+        <Link
+          to="/about"
+          className={currentPath === "/about" ? "active" : ""}
+          onClick={handleMenuClick}
         >
-          Cart
-          <span className="dot"></span>
-        </li>
+          About
+        </Link>
+
         <a
-          href="#footer"
-          onClick={() => setMenu("Contact-us")}
-          className={Menu === "Contact-us" ? "active" : ""}
+          href="/contact"
+          className={currentPath === "/contact" ? "active" : ""}
+          onClick={handleMenuClick}
         >
           Contact Us
         </a>
       </ul>
 
+      {/* ===== Right Section: Search + Basket + User ===== */}
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="search food" />
 
+        {/* Basket Icon */}
+        <Link to="/cart" className="basket-container" onClick={handleMenuClick}>
+          <img src={assets.basket_icon} alt="Basket" className="basket-icon" />
+
+          {/* ✅ Show dot only if cart has items */}
+          {totalCartItems > 0 && (
+            <img
+              src={assets.selector_icon}
+              alt="Notification Dot"
+              className="basket-dot"
+            />
+          )}
+        </Link>
+
+        {/* User Section */}
         {user ? (
           <div className="navbar-user">
             <span className="navbar-username">Hello, {user.name}</span>
-            <button onClick={handleLogout}>
+            <button onClick={handleLogout} className="logout-btn">
               <img
                 src={assets.logout_icon}
                 alt="logout"
@@ -63,8 +102,18 @@ const Navbar = ({ setShowLogin, user, setUser }) => {
             </button>
           </div>
         ) : (
-          <button onClick={() => setShowLogin(true)}>Sign in</button>
+          <button className="signin-btn" onClick={() => setShowLogin(true)}>
+            Sign in
+          </button>
         )}
+
+        {/* ===== Menu Icon (Visible only on small screens) ===== */}
+        <img
+          src={assets.menu}
+          alt="menu"
+          className="menu-icon"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        />
       </div>
     </div>
   );

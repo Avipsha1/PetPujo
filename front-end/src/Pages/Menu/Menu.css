@@ -1,0 +1,213 @@
+/* === Main Layout === */
+.menu-page {
+  display: flex;
+  gap: 20px;
+  padding: 40px 80px;
+  background-color: #fafafa;
+}
+
+/* === Sidebar === */
+.menu-sidebar {
+  width: 230px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 80px;
+
+  /* ✅ Fix: make sidebar scrollable and clickable */
+  max-height: 100vh;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.menu-sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.menu-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+  color: #555;
+}
+
+.menu-sidebar li:hover {
+  background: #f3f3f3;
+}
+
+.menu-sidebar li.active {
+  background: #e3e7ff;
+  color: #000;
+  font-weight: 600;
+}
+
+.menu-sidebar li img {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* === Content Section === */
+.menu-content {
+  flex: 1;
+}
+
+.menu-content h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* === Food Grid === */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.food-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  text-align: center;
+  position: relative;
+  transition: 0.3s;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.food-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* === Add / Counter Buttons === */
+.add {
+  position: absolute;
+  bottom: 100px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add:hover {
+  transform: scale(1.1);
+}
+
+.food-item-counter {
+  position: absolute;
+  bottom: 95px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  padding: 3px 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.food-item-counter img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.food-item-counter img:hover {
+  transform: scale(1.1);
+}
+
+/* === Texts === */
+.food-name {
+  font-weight: 600;
+  color: #333;
+  margin: 8px 0 4px;
+  font-size: 16px;
+}
+
+.food-price {
+  color: #555;
+  font-size: 15px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 1024px) {
+  .menu-page {
+    flex-direction: column;
+    padding: 30px 40px;
+  }
+
+  .menu-sidebar {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    position: static;
+    border: none;
+    background: transparent;
+  }
+
+  .menu-sidebar ul {
+    display: flex;
+    gap: 15px;
+  }
+
+  .menu-sidebar li {
+    flex-direction: column;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 10px;
+    min-width: 90px;
+    text-align: center;
+  }
+
+  .menu-content h1 {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-page {
+    padding: 20px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .food-img {
+    height: 130px;
+  }
+}

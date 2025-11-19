@@ -23,8 +23,8 @@
 
 /* Error toast */
 .toast.error {
-  background: #ffffff; 
-  color: rgb(74, 72, 72);
+  background: #e63946; 
+  color: rgb(255, 255, 255);
 }
 
 /* Animations */

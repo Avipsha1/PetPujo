@@ -1,0 +1,116 @@
+.about {
+  width: 100%;
+  padding: 60px 80px;
+  color: #333;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* === Top Section === */
+.about-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 350px;
+  /* border-radius: 12px; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.about-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-content h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.about-content h3 {
+  font-size: 22px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* === Why Choose Us === */
+.why-choose-us {
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.why-choose-us h2 span {
+  color: #ff2f00;
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.choose-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.choose-card:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.choose-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.choose-card p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 20px;
+  }
+
+  .about-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-img {
+    max-width: 100%;
+  }
+
+  .about-content h2 {
+    text-align: center;
+  }
+}

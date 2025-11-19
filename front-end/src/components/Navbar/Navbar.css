@@ -1,130 +1,230 @@
-.navbar{
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}   
-.navbar .logo{
-    width: 170px;
-}
-.navbar-menu{
-    color: #4A4A4A;
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    font-weight: 500;
-    font-size: 18px;
-}
-.navbar-right{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-}
-.navbar-right button{
-    padding: 10px 30px;
-    background: transparent;
-    border: 1px solid rgb(1, 1, 1);
-    color:#49557e;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-}
-.navbar button:hover{
-    background: #f4d6d3;
-    /* font-weight: bold; */
-}
-.navbar .active{
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557e;
-}
-.navbar li{
-    cursor: pointer;
-}
-.navbar-cart {
+/* === Navbar Container === */
+.navbar {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #d3d3d3; /* ash color line */
   position: relative;
+  z-index: 100;
+}
+
+/* === Logo === */
+.navbar .logo {
+  width: 150px;
+}
+
+/* === Menu Links === */
+.navbar-menu {
+  color: #4A4A4A;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.navbar-menu a:hover {
+  color: #49557e;
+}
+
+/* Active link underline */
+.navbar .active {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #49557e;
+}
+
+/* === Right Section === */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* === Search Icon === */
+.search-icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.search-icon:hover {
+  transform: scale(1.1);
+}
+
+/* === Basket Icon with Dot === */
+.basket-container {
+  position: relative;
+  display: inline-block;
   cursor: pointer;
 }
 
-.navbar-cart .dot {
+.basket-icon {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s ease;
+}
+
+.basket-icon:hover {
+  transform: scale(1.1);
+}
+
+.basket-dot {
   position: absolute;
-  top: -5px;   
-  right: -10px; 
+  top: -4px;
+  right: -4px;
   width: 10px;
   height: 10px;
-  background: red;
-  border-radius: 50%;
+}
+
+/* === Sign In / Logout === */
+.navbar-right button {
+  padding: 10px 30px;
+  background: transparent;
+  border: 1px solid rgb(1, 1, 1);
+  color: #49557e;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.navbar-right button:hover {
+  background: #f4d6d3;
+}
+
+/* === User Section === */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .navbar-username {
-  margin-right: 10px;        
-  font-weight: 500;          
-  font-size: 18px;          
-  color: red;               
+  margin-right: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  color: red;
 }
 
-.navbar-user {
-  display: flex;             
+.logout-btn {
+  display: flex;
   align-items: center;
-  gap: 2px;                  
-}
-
-.navbar-user button {
-  display: flex; 
-  position: relative;           
-  align-items: center;                   
-  padding: 6px 12px;                   
-  border: none;                       
+  justify-content: center;
+  border: none;
+  background: transparent;
   cursor: pointer;
   transform: rotate(90deg);
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
 }
 
-.navbar-user button:hover {
-  background-color: #dcd9d9; 
+.logout-btn:hover {
+  background-color: #dcd9d9;
 }
 
-.navbar-user button img,
-.navbar-user button svg {
-  width: 30px;              
+.logout-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* === Menu Icon (hidden by default) === */
+.menu-icon {
+  display: none;
+  width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
+/* === Responsive Styles === */
 @media (max-width: 1050px) {
-    .navbar .logo{
-        width: 140px;
-    }
-    .navbar-menu{
-        font-size: 17;
-        gap: 20px;
-    }
-    .navbar-right{
-        gap: 30px;
-    }
-    nav-right image{
-        width: 22px;
-    }
-    .navbar-right button{
-        padding: 8px 20px;
-        font-size: 14px;
-    }
+  .navbar .logo {
+    width: 140px;
+  }
+  .navbar-menu {
+    font-size: 17px;
+    gap: 20px;
+  }
+  .navbar-right {
+    gap: 15px;
+  }
+  .search-icon,
+  .basket-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .navbar-right button {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
 }
+
 @media (max-width: 900px) {
-    .navbar .logo{
-        width: 120px;
-    }
-    .navbar-menu{
-        font-size: 16;
-        gap: 15px;
-    }
-    .navbar-right{
-        gap: 20px;
-    }
-    nav-right image{
-        width: 20px;
-    }
-    .navbar-right button{
-        padding: 7px 20px;
-        font-size: 15px;
-    }
+  .navbar .logo {
+    width: 120px;
+  }
+  .navbar-menu {
+    font-size: 16px;
+    gap: 15px;
+  }
+  .navbar-right {
+    gap: 15px;
+  }
+  .search-icon,
+  .basket-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .navbar-right button {
+    padding: 7px 18px;
+    font-size: 14px;
+  }
+}
+
+/* === Mobile View (Fully Responsive) === */
+@media (max-width: 768px) {
+  /* Hide desktop menu */
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+  }
+
+  /* Show menu when toggled */
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  /* Show hamburger icon only on small screen */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Adjust spacing */
+  .navbar-right {
+    gap: 10px;
+  }
+
+  /* Optional: make button smaller */
+  .navbar-right button {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
 }

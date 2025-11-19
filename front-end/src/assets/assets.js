@@ -1,22 +1,20 @@
 import basket_icon from './basket_icon.png'
-import logo from './logo.png'
+import logo1 from './logo1.svg'
+import logo from './logo.svg'
+import logo2 from './logo2.svg'
 import search_icon from './search_icon.png'
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
 import remove_icon_red from './remove_icon_red.png'
 import cross_icon from './cross_icon.png'
 import selector_icon from './selector_icon.png'
-{/*import rating_stars from './rating_stars.png'*/}
 import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import header from './header (2).jpg'
-import menu_1 from './DOSA.jpg'
-import menu_2 from './Fried_rice.jpg'
-import menu_3 from './Indian_combo.jpg'
-import menu_4 from './pakoras.jpg'
-import menu_5 from './Noodles.jpg'
-import menu_6 from './ice.jpg'
+import south_indian from './DOSA.jpg'
+import noodles from './Noodles.jpg'
+import icecream from './ice.jpg'
 import chicken_chowmein from './chicken_chowmein.png'
 import veg_chow from './veg_chow.png'
 import chowmein from './chowmein.png'
@@ -26,7 +24,7 @@ import cold_drink from './cold_drink.png'
 import green_tea from './green_tea.png'
 import green_tea1 from './green_tea1.png'
 import lassi from './lassi.png'
-import lassi1 from  './lassi1.png'
+import lassi1 from './lassi1.png'
 import lassi2 from './lassi2.png'
 import milk_coffee from './milk_coffee.png'
 import milk_tea from './milk_tea.png'
@@ -42,14 +40,21 @@ import chicken_kosa from './chicken-kosha.jpg'
 import chilli_chicken from './chilli_chicken.png'
 import chilli_paneer from './chilli_paneer.png'
 import DOSA from './DOSA.jpg'
-import breads from './breads.jpg'
+import butternun from './breads.jpg'
 import ice from './ice.jpg'
 import pakoras from './pakoras.jpg'
+import dishes from './dishes.png'
+import rice from './rice.png'
+import brevarages from './breverages.png'
+import contact from './contact.png'
+import menu from './menu_icon.svg'
+import breads from './breads.png'
 export const assets = {
+    logo1,
     logo,
+    logo2,
     basket_icon,
     search_icon,
-    /*rating_stars,*/
     add_icon_green,
     add_icon_white,
     remove_icon_red,
@@ -59,12 +64,12 @@ export const assets = {
     logout_icon,
     bag_icon,
     header,
-    menu_1,
-    menu_2,
-    menu_3,
-    menu_4,
-    menu_5,
-    menu_6,
+    south_indian,
+    dishes,
+    rice,
+    brevarages,
+    noodles,
+    icecream,
     chicken_chowmein,
     veg_chow,
     chowmein,
@@ -88,34 +93,41 @@ export const assets = {
     chicken_drumstick,
     chicken_kosa,
     chilli_chicken,
-    chilli_paneer
+    chilli_paneer,
+    contact,
+    menu, 
+    butternun
 }
 
-export const menu_list = [
+export const category_list = [
 
     {
-        menu_name: "Dosa",
-        menu_image: menu_1
+        category_name: "South Indian",
+        category_image: south_indian
     },
     {
-        menu_name: "Fried rice Combo",
-        menu_image: menu_2
+        category_name: "Dishes",
+        category_image: dishes
     },
     {
-        menu_name: "Indian Combo",
-        menu_image: menu_3
+        category_name: "Rice",
+        category_image: rice
     },
     {
-        menu_name: "Pakoras",
-        menu_image: menu_4
+        category_name: "Noodles",
+        category_image: noodles
     },
     {
-        menu_name: "Noodles",
-        menu_image: menu_5
+        category_name: "Breads",
+        category_image: breads
     },
     {
-        menu_name: "Ice-cream",
-        menu_image: menu_6
+        category_name: "Breverages",
+        category_image: brevarages
+    },
+    {
+        category_name: "Ice-cream",
+        category_image: icecream
     },
 ]
 
@@ -124,111 +136,120 @@ export const food_list = [
         _id: "1",
         name: "Chicken Chowmein",
         image: chicken_chowmein,
-        price:40,
-        category: "Chowmein"
+        price: 40,
+        category: "Noodles"
     },
     {
         _id: "2",
         name: "Veg Chowmein",
         image: veg_chow,
-        price:30,
-        category: "Chowmein"
+        price: 30,
+        category: "Noodles"
     },
     {
         _id: "3",
         name: "Dosa",
         image: DOSA,
-        price:50,
-        category: "lunch"
+        price: 50,
+        category: "South Indian"
     },
     {
         _id: "4",
         name: "Pulao",
-        image: pulao ,
-        price:90,
-        category: "rice"
+        image: pulao,
+        price: 90,
+        category: "Rice"
     },
     {
         _id: "5",
         name: "Jeera Rice",
         image: jeera_rice,
-        price:70,
-        category: "rice"
+        price: 70,
+        category: "Rice"
     },
     {
         _id: "6",
         name: "Fried Rice",
         image: fried_rice,
-        price:90,
+        price: 90,
         category: "rice"
     },
-     {
+    {
         _id: "7",
         name: "Chicken Kosa",
         image: chicken_kosa,
-        price:70,
-        category: "chicken"
+        price: 70,
+        category: "Dishes"
     },
-     {
+    {
         _id: "8",
         name: "Chilli Chicken",
         image: chilli_chicken,
-        price:80,
-        category: "chicken" }
+        price: 80,
+        category: "Dishes"
+    }
     , {
         _id: "9",
         name: "Chicken Drumstick",
         image: chicken_drumstick,
-        price:100,
-        category: "chicken"
+        price: 100,
+        category: "Dishes"
     },
-     {
+    {
         _id: "10",
         name: " Chilli Paneer",
         image: chilli_paneer,
-        price:60,
-        category: "veg"
-    }, {
+        price: 60,
+        category: "Dishes"
+    }, 
+    {
         _id: "11",
         name: "Channa Massala",
         image: chana_massala,
-        price:40,
-        category: "breakfast"
+        price: 40,
+        category: "Dishes"
     },
-     {
+    {
         _id: "12",
-        name: "Breads",
-        image: breads,
-        price:20,
-        category: "breads"
+        name: "Butter Nun",
+        image: butternun,
+        price: 25,
+        category: "Breads"
     },
-     {
+    {
         _id: "13",
         name: "Ice Cream",
         image: ice,
-        price:50,
-        category: "dessert"
+        price: 50,
+        category: "Ice-cream"
     },
-     {
+    {
         _id: "14",
         name: "Chicken Pakoras",
         image: pakoras,
-        price:25,
+        price: 25,
         category: "pakoras"
     },
-     {
+    {
         _id: "15",
         name: "Fried Rice",
         image: fried_rice,
-        price:90,
-        category: "rice"
+        price: 90,
+        category: "Rice"
     },
-     {
+    {
         _id: "16",
         name: "Milk Coffee",
         image: milk_coffee,
-        price:10,
-        category: "breverages"
+        price: 10,
+        category: "Breverages"
+    },
+    {
+        _id: "17",
+        name: "Black Coffee",
+        image: black_coffee,
+        price: 10,
+        category: "Breverages"
     },
 
 

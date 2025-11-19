@@ -1,23 +1,34 @@
-import React from "react";
-import './ExploreMenu.css'
-import { menu_list } from "../../assets/assets";
-const ExploreMenu=({category,setCategory})=>{
-    return(
-        <div className='explore-menu' id='explore-menu'>
-            <h1>Explore our menu</h1>
-            <p className='explore-menu-text'>Your one-stop destination for tasty dishes and diverse cuisines. Order seamlessly online and enjoy delicious food anytime, anywhere.</p>
-            <div className="explore-menu-list">
-                {menu_list.map((item, index)=>{
-                    return (
-                        <div onClick={()=>setCategory(prev=>prev===item.menu_name?"All":item.menu_name)} key={index} className='explore-menu-list-item'>
-                            <img className={category===item.menu_name?"active":""} src={item.menu_image} alt=""/>
-                            <p>{item.menu_name}</p>
-                            </div>
-                    )
-                })}
-            </div>
-            <hr/>
-        </div>
-    )
-}
-export default ExploreMenu
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import "./ExploreMenu.css";
+import { StoreContext } from "../../context/StoreContext";
+
+const ExploreMenu = ({ category, setCategory }) => {
+  const navigate = useNavigate();
+  const { categories } = useContext(StoreContext); // fetch categories from DB
+
+  const handleCategoryClick = (category_name) => {
+    setCategory(category_name);
+    navigate("/menu", { state: { selectedCategory: category_name } });
+  };
+
+  return (
+    <div id="explore-menu" className="explore-menu">
+      <h2>Explore Menu</h2>
+      <div className="explore-menu-list">
+        {categories.map((item) => (
+          <div
+            key={item.category_id}
+            className={`menu-item ${category === item.category_name ? "active" : ""}`}
+            onClick={() => handleCategoryClick(item.category_name)}
+          >
+            <img src={item.category_image || ""} alt={item.category_name} />
+            <p>{item.category_name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ExploreMenu;
