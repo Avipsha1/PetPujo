@@ -5,21 +5,32 @@ import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 
 const Cart = () => {
-  const { cartItems, menu, removeFromCart, getTotalCartAmount } =
-    useContext(StoreContext);
+  const {
+    cartItems,
+    menu,
+    removeFromCart,
+    getTotalCartAmount,
+    getPackagingFee,
+    setMessage, // ✅ use App's toast system
+  } = useContext(StoreContext);
 
-  // Calculate total quantity of all items
   const totalItems = Object.values(cartItems).reduce((a, b) => a + b, 0);
-
-  // Packaging fee = ₹5 per item
-  const packagingFee = totalItems * 5;
+  const packagingFee = getPackagingFee();
 
   const navigate = useNavigate();
+
+  // ✅ Checkout click handler
+  const handleCheckout = () => {
+    if (totalItems === 0) {
+      setMessage("❌ Cart is empty! Add items before checkout.");
+      return;
+    }
+    navigate("/order");
+  };
 
   return (
     <div className="cart">
       <div className="cart-container">
-        {/* ==== CART ITEMS ==== */}
         <div className="cart-items">
           <div className="cart-header">
             <p>Items</p>
@@ -54,32 +65,31 @@ const Cart = () => {
           })}
         </div>
 
-        {/* ==== CART BOTTOM (Totals + Promo) ==== */}
         <div className="cart-bottom">
-          {/* ==== CART TOTALS ==== */}
           <div className="cart-summary">
             <h2>Cart Totals</h2>
+
             <div className="summary-line">
               <p>Subtotal</p>
               <p>₹{getTotalCartAmount()}</p>
             </div>
+
             <div className="summary-line">
               <p>Packaging Fee (₹5 × {totalItems} items)</p>
               <p>₹{packagingFee}</p>
             </div>
+
             <div className="summary-line total">
               <b>Total</b>
               <b>₹{getTotalCartAmount() + packagingFee}</b>
             </div>
-            <button
-              onClick={() => navigate("/order")}
-              className="checkout-btn"
-            >
+
+            {/* ✅ Use App’s toast/message system */}
+            <button onClick={handleCheckout} className="checkout-btn">
               PROCEED TO CHECKOUT
             </button>
           </div>
 
-          {/* ==== PROMO CODE ==== */}
           <div className="promo-section">
             <h3>Apply Promo Code</h3>
             <p>If you have a promo code, enter it here</p>

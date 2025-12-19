@@ -4,13 +4,13 @@ import axios from "axios";
 export const StoreContext = createContext();
 
 const StoreContextProvider = ({ children }) => {
-  const [menu, setMenu] = useState([]);          
-  const [categories, setCategories] = useState([]); 
+  const [menu, setMenu] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [cartItems, setCartItems] = useState({});
 
-  // ✅ New state for login popup
+  // ✅ Login popup state
   const [showLogin, setShowLogin] = useState(false);
-  const [message, setMessage] = useState(""); 
+  const [message, setMessage] = useState("");
 
   // Fetch menu items
   const fetchMenu = async () => {
@@ -52,7 +52,7 @@ const StoreContextProvider = ({ children }) => {
     }));
   };
 
-  // Remove item
+  // Remove item from cart
   const removeFromCart = (itemId) => {
     setCartItems((prev) => {
       const updated = { ...prev };
@@ -70,6 +70,15 @@ const StoreContextProvider = ({ children }) => {
     }, 0);
   };
 
+  // ✅ Packaging fee = ₹5 per item
+  const getPackagingFee = () => {
+    const totalItems = Object.values(cartItems).reduce(
+      (sum, qty) => sum + qty,
+      0
+    );
+    return totalItems * 5;
+  };
+
   useEffect(() => {
     fetchMenu();
     fetchCategories();
@@ -82,14 +91,17 @@ const StoreContextProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
-    showLogin,      // ✅ new
-    setShowLogin,   // ✅ new
-    message,        // ✅ new
-    setMessage      // ✅ new
+    getPackagingFee, // ✅ added
+    showLogin,
+    setShowLogin,
+    message,
+    setMessage,
   };
 
   return (
-    <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
+    <StoreContext.Provider value={value}>
+      {children}
+    </StoreContext.Provider>
   );
 };
 
